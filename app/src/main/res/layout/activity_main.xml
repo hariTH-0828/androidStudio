@@ -43,16 +43,18 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.466" />
 
-    <ImageView
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/sigin_heading"
+        android:background="@android:color/transparent"
+        android:text="@string/signup_header"
+        android:textStyle="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.123"
+        app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.522" />
+        app:layout_constraintTop_toTopOf="@+id/linearLayoutCompat"
+        app:layout_constraintVertical_bias="0.523" />
 
     <ImageButton
         android:id="@+id/onLogin"
@@ -65,18 +67,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/linearLayoutCompat"
         app:layout_constraintVertical_bias="0.587"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        android:contentDescription="Login_Button" />
 
-    <ImageView
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/signup_heading"
+        android:background="@android:color/transparent"
+        android:text="@string/login_header"
+        android:textStyle="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.063"
+        app:layout_constraintHorizontal_bias="0.051"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.646" />
+        app:layout_constraintTop_toTopOf="@+id/linearLayoutCompat"
+        app:layout_constraintVertical_bias="0.65" />
 
     <ImageButton
         android:id="@+id/onSignup"
@@ -89,7 +94,8 @@
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/linearLayoutCompat"
-        app:layout_constraintVertical_bias="0.726" />
+        app:layout_constraintVertical_bias="0.726"
+        android:contentDescription="Signup_Button" />
 
     <TextView
         android:id="@+id/textView3"

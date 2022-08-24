@@ -5,4 +5,6 @@
     <string name="header_image">Header Image</string>
     <string name="developer_name">Developed By Hariharan</string>
     <string name="index_btn_name">Let\'s Start</string>
+    <string name="signup_header">Sign in if you already have an account with us</string>
+    <string name="login_header">Or sign up if you are now!</string>
 </resources>
