@@ -7,4 +7,15 @@
     <string name="index_btn_name">Let\'s Start</string>
     <string name="signup_header">Sign in if you already have an account with us</string>
     <string name="login_header">Or sign up if you are now!</string>
+
+    <!-- Sign up -->
+    <string name="welcome">Welcome</string>
+    <string name="signup_1">Signup into your account</string>
+    <string name="submitbtn">Submit</string>
+    <string name="name">Name</string>
+    <string name="passwordicon">passwordIcon</string>
+    <string name="phonenoicon">phonenoIcon</string>
+    <string name="bgheader">bgHeader</string>
+    <string name="contactheader">contactHeader</string>
+    <string name="emailicon">emailIcon</string>
 </resources>

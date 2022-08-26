@@ -3,4 +3,10 @@
     <string name="start_reporting">Start Reporting</string>
     <string name="Content">Manage your business much \n better than before with us</string>
     <string name="header_image">Header Image</string>
+    <string name="name">Name</string>
+    <string name="passwordicon">passwordIcon</string>
+    <string name="phonenoicon">phonenoIcon</string>
+    <string name="bgheader">bgHeader</string>
+    <string name="contactheader">contactHeader</string>
+    <string name="emailicon">emailIcon</string>
 </resources>
