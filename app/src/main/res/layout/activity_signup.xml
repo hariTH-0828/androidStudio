@@ -31,13 +31,14 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="9dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="244dp"
         android:background="@android:color/transparent"
         android:fontFamily="@font/ubuntu"
         android:text="@string/signup_1"
         android:textStyle="normal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.063"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
@@ -45,8 +46,10 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
         android:layout_marginTop="33dp"
-        android:layout_marginBottom="9dp"
+        android:layout_marginEnd="276dp"
+        android:layout_marginBottom="12dp"
         android:fontFamily="@font/ubuntu_regular"
         android:text="@string/welcome"
         android:textColor="@color/black"
@@ -54,132 +57,122 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.056"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="44dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="9dp"
-        android:contentDescription="@string/emailicon"
-        android:src="@drawable/email_icon"
-        app:layout_constraintEnd_toStartOf="@+id/editTextTextEmailAddress"
-        app:layout_constraintHorizontal_bias="0.47"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress"
+        android:id="@+id/editMailID"
         android:layout_width="288dp"
         android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="89dp"
+        android:layout_marginBottom="13dp"
         android:autofillHints=""
         android:ems="10"
         android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/editName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.569"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.526"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
         tools:text="Email ID" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="44dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginEnd="10dp"
-        android:contentDescription="@string/contactheader"
-        android:src="@drawable/name_icon"
-        app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/editPassword"
         android:layout_width="288dp"
         android:layout_height="48dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="89dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/imageView4"
+        app:layout_constraintTop_toBottomOf="@+id/editPhoneNumber"
+        tools:text="Password" />
+
+    <EditText
+        android:id="@+id/editName"
+        android:layout_width="288dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="89dp"
         android:autofillHints=""
         android:ems="10"
         android:inputType="textPersonName"
         android:text="@string/name"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.569"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.611" />
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/editMailID" />
+
+    <EditText
+        android:id="@+id/editPhoneNumber"
+        android:layout_width="288dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="89dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:inputType="phone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        app:layout_constraintTop_toBottomOf="@+id/editName"
+        tools:text="Phone number" />
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="44dp"
         android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="22dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="12dp"
         android:contentDescription="@string/phonenoicon"
         android:src="@drawable/call_icon"
-        app:layout_constraintEnd_toStartOf="@+id/editTextPhone"
+        app:layout_constraintEnd_toStartOf="@+id/editPhoneNumber"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
-    <EditText
-        android:id="@+id/editTextPhone"
-        android:layout_width="288dp"
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="44dp"
         android:layout_height="48dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:inputType="phone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.569"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="13dp"
+        android:contentDescription="@string/emailicon"
+        android:src="@drawable/email_icon"
+        app:layout_constraintBottom_toTopOf="@+id/imageView2"
+        app:layout_constraintEnd_toStartOf="@+id/editMailID"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.703"
-        tools:text="Phone number" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="44dp"
         android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="22dp"
-        android:layout_marginEnd="9dp"
-        android:layout_marginBottom="152dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="12dp"
         android:contentDescription="@string/passwordicon"
         android:src="@drawable/password_icon"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/editTextTextPassword"
-        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintEnd_toStartOf="@+id/editPassword"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
-    <EditText
-        android:id="@+id/editTextTextPassword"
-        android:layout_width="288dp"
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="44dp"
         android:layout_height="48dp"
-        android:layout_marginStart="69dp"
-        android:layout_marginEnd="54dp"
-        android:layout_marginBottom="152dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:inputType="textPassword"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.607"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="12dp"
+        android:contentDescription="@string/contactheader"
+        android:src="@drawable/name_icon"
+        app:layout_constraintEnd_toStartOf="@+id/editName"
         app:layout_constraintStart_toStartOf="parent"
-        tools:text="Password" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="101dp"
+        android:layout_marginStart="129dp"
         android:layout_marginTop="42dp"
         android:layout_marginEnd="101dp"
         android:layout_marginBottom="44dp"
@@ -188,9 +181,8 @@
         android:src="@drawable/submit_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword"
+        app:layout_constraintTop_toBottomOf="@+id/editPassword"
         tools:ignore="ImageContrastCheck" />
 
 
