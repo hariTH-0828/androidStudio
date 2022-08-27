@@ -6,8 +6,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+
+    public void onClickLogin(View view){
+        ImageButton loginBtn = findViewById(R.id.onLogin);
+        Toast.makeText(MainActivity.this,"There is no view for this Button", Toast.LENGTH_LONG).show();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

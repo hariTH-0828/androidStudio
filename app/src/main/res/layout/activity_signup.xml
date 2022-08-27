@@ -125,6 +125,7 @@
         android:layout_height="48dp"
         android:layout_marginStart="100dp"
         android:layout_marginTop="12dp"
+        android:layout_marginEnd="2dp"
         android:contentDescription="@string/phonenoicon"
         android:src="@drawable/call_icon"
         app:layout_constraintEnd_toStartOf="@+id/editPhoneNumber"
@@ -137,6 +138,7 @@
         android:layout_height="48dp"
         android:layout_marginStart="100dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="2dp"
         android:layout_marginBottom="13dp"
         android:contentDescription="@string/emailicon"
         android:src="@drawable/email_icon"
@@ -151,6 +153,7 @@
         android:layout_height="48dp"
         android:layout_marginStart="100dp"
         android:layout_marginTop="12dp"
+        android:layout_marginEnd="2dp"
         android:contentDescription="@string/passwordicon"
         android:src="@drawable/password_icon"
         app:layout_constraintEnd_toStartOf="@+id/editPassword"
@@ -163,6 +166,7 @@
         android:layout_height="48dp"
         android:layout_marginStart="100dp"
         android:layout_marginTop="12dp"
+        android:layout_marginEnd="2dp"
         android:contentDescription="@string/contactheader"
         android:src="@drawable/name_icon"
         app:layout_constraintEnd_toStartOf="@+id/editName"
@@ -170,6 +174,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <ImageButton
+        android:id="@+id/onSubmit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="129dp"
@@ -183,7 +188,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editPassword"
-        tools:ignore="ImageContrastCheck" />
+        tools:ignore="ImageContrastCheck"
+        android:onClick="onClickbtnSubmit"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

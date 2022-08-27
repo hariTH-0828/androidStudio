@@ -77,6 +77,7 @@
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
+        android:onClick="onClickLogin"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -98,18 +99,17 @@
         android:id="@+id/onSignup"
         android:layout_width="210dp"
         android:layout_height="48dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="101dp"
+        android:layout_marginStart="101dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="110dp"
         android:backgroundTint="@color/index_bg_color"
         android:contentDescription="Signup_Button"
         android:src="@drawable/signup_button"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <TextView
         android:id="@+id/textView3"
