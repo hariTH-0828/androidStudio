@@ -22,7 +22,7 @@ import java.util.regex.Pattern;
 
 public class SignupActivity extends AppCompatActivity {
 
-    private EditText sEmail, sName, sPhone, sPassword;
+    private EditText sEmail, sRepassword, sPassword;
     private ImageButton SignUp;
     private FirebaseAuth sAuth;
 
@@ -32,9 +32,8 @@ public class SignupActivity extends AppCompatActivity {
         setContentView(R.layout.activity_signup);
 
         sEmail = findViewById(R.id.editMailID);
-        sName = findViewById(R.id.editName);
         sPassword = findViewById(R.id.editPassword);
-        sPhone = findViewById(R.id.editPhoneNumber);
+        sRepassword = findViewById(R.id.editRepass);
         SignUp = findViewById(R.id.onSubmit);
 
         sAuth = FirebaseAuth.getInstance();
@@ -58,9 +57,10 @@ public class SignupActivity extends AppCompatActivity {
     private void createUser(){
         String email = sEmail.getText().toString();
         String password = sPassword.getText().toString();
+        String repassword = sRepassword.getText().toString();
 
         if(!email.isEmpty() && Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-            if(!password.isEmpty()) {
+            if(!password.isEmpty() && password.equals(repassword)) {
                 sAuth.createUserWithEmailAndPassword(email, password)
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
@@ -76,8 +76,8 @@ public class SignupActivity extends AppCompatActivity {
                     }
                 });
             } else{
-                sPassword.setError("Empty Field is not allowed");
-                Toast.makeText(SignupActivity.this,"Password is too short",Toast.LENGTH_LONG).show();
+//                sPassword.setError("Empty Field is not allowed");
+                Toast.makeText(SignupActivity.this,"Error Password!!",Toast.LENGTH_LONG).show();
             }
         }else{
             Toast.makeText(SignupActivity.this,"Incorrect Email Format",Toast.LENGTH_LONG).show();
