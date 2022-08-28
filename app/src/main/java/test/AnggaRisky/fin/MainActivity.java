@@ -8,11 +8,16 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.google.android.material.snackbar.Snackbar;
+
 public class MainActivity extends AppCompatActivity {
 
     public void onClickLogin(View view){
         ImageButton loginBtn = findViewById(R.id.onLogin);
-        Toast.makeText(MainActivity.this,"There is no view for this Button", Toast.LENGTH_LONG).show();
+        loginBtn.setOnClickListener(view1 -> {
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(intent);
+        });
     }
 
     @Override
@@ -20,13 +25,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ImageButton signup = (ImageButton) findViewById(R.id.onSignup);
-        signup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, SignupActivity.class);
-                startActivity(intent);
-            }
+        ImageButton signup = findViewById(R.id.onSignup);
+        signup.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, SignupActivity.class);
+            startActivity(intent);
         });
     }
 }

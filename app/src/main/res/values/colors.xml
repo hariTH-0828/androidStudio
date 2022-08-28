@@ -10,5 +10,6 @@
     <color name="index_btn_bg">#FFECAD7C</color>
     <color name="index_bg_color">#ABE0D5</color>
     <color name="signup_header">#66F4E3E3</color>
+    <color name="green">#AA26730A</color>
 
 </resources>

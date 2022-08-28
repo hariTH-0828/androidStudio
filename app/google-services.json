@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "1040102030993",
+    "project_id": "letstry-cd2bd",
+    "storage_bucket": "letstry-cd2bd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1040102030993:android:f35d3475cb380320704930",
+        "android_client_info": {
+          "package_name": "test.AnggaRisky.fin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1040102030993-95lgiirrfvrlpl5dmhm6na7qk87ecglo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQH2kGLF-8zjb3YUfeoPHJTM4ZBt_umg0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1040102030993-95lgiirrfvrlpl5dmhm6na7qk87ecglo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1040102030993:android:cf0aab8f319fb1e9704930",
+        "android_client_info": {
+          "package_name": "test.android.letstry"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1040102030993-95lgiirrfvrlpl5dmhm6na7qk87ecglo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQH2kGLF-8zjb3YUfeoPHJTM4ZBt_umg0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1040102030993-95lgiirrfvrlpl5dmhm6na7qk87ecglo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

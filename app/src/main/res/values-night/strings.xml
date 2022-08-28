@@ -8,5 +8,6 @@
     <string name="phonenoicon">phonenoIcon</string>
     <string name="bgheader">bgHeader</string>
     <string name="contactheader">contactHeader</string>
-    <string name="emailicon">emailIcon</string>
+    <string name="email_icon">eMail_icon</string>
+    <string name="email_id">Email ID</string>
 </resources>

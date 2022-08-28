@@ -17,4 +17,10 @@
     <string name="phonenoicon">phonenoIcon</string>
     <string name="bgheader">bgHeader</string>
     <string name="contactheader">contactHeader</string>
+
+    <!-- Login -->
+    <string name="loginInfo">Sign In to your account</string>
+    <string name="email_icon">eMail_icon</string>
+    <string name="email_id">Email ID</string>
+    <string name="password">password</string>
 </resources>
