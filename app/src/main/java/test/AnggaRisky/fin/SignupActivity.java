@@ -46,14 +46,6 @@ public class SignupActivity extends AppCompatActivity {
         });
     }
 
-    public void onClickLogin(View view) {
-        TextView signIn = findViewById(R.id.onSignIn);
-        signIn.setOnClickListener(view1 -> {
-            Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
-            startActivity(intent);
-        });
-    }
-
     private void createUser(){
         String email = sEmail.getText().toString();
         String password = sPassword.getText().toString();
@@ -83,6 +75,13 @@ public class SignupActivity extends AppCompatActivity {
             Toast.makeText(SignupActivity.this,"Incorrect Email Format",Toast.LENGTH_LONG).show();
         }
 
+    }
 
+    public void onClickLogin(View view) {
+        TextView signIn = findViewById(R.id.onSignIn);
+        signIn.setOnClickListener(view1 -> {
+            Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
+            startActivity(intent);
+        });
     }
 }

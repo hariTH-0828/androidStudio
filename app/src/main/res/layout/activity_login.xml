@@ -58,8 +58,8 @@
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="45sp"
-        android:layout_height="45dp"
+        android:layout_width="48sp"
+        android:layout_height="48dp"
         android:layout_marginStart="64dp"
         android:layout_marginTop="132dp"
         android:layout_marginEnd="1dp"
@@ -67,14 +67,14 @@
         android:contentDescription="@string/email_icon"
         android:src="@drawable/email_icon"
         app:layout_constraintBottom_toTopOf="@+id/imageView6"
-        app:layout_constraintEnd_toStartOf="@+id/editText"
+        app:layout_constraintEnd_toStartOf="@+id/setEmail"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/setEmail"
         android:layout_width="245dp"
-        android:layout_height="45sp"
+        android:layout_height="48dp"
         android:layout_marginStart="1dp"
         android:layout_marginTop="36dp"
         android:layout_marginEnd="56dp"
@@ -83,28 +83,28 @@
         android:hint="@string/email_id"
         android:inputType="textEmailAddress"
         android:textColorHint="#757575"
-        app:layout_constraintBottom_toTopOf="@+id/editText2"
+        app:layout_constraintBottom_toTopOf="@+id/setPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView5"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
     <ImageView
         android:id="@+id/imageView6"
-        android:layout_width="45sp"
-        android:layout_height="45sp"
+        android:layout_width="48sp"
+        android:layout_height="48sp"
         android:layout_marginStart="64dp"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="1dp"
         android:contentDescription="@string/passwordicon"
         android:src="@drawable/password_icon"
-        app:layout_constraintEnd_toStartOf="@+id/editText2"
+        app:layout_constraintEnd_toStartOf="@+id/setPassword"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/setPassword"
         android:layout_width="245dp"
-        android:layout_height="45dp"
+        android:layout_height="48dp"
         android:layout_marginStart="1dp"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="56dp"
@@ -114,7 +114,7 @@
         android:textColorHint="#757575"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView6"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/setEmail" />
 
     <ImageButton
         android:id="@+id/onSubmit"
@@ -130,7 +130,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2"
+        app:layout_constraintTop_toBottomOf="@+id/setPassword"
         tools:ignore="ImageContrastCheck" />
 
 

@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".SignupActivity">
 
+    <!--Header-->
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/linearLayoutCompat"
         android:layout_width="wrap_content"
@@ -13,9 +14,12 @@
         android:background="@drawable/signup_bgheader"
         android:gravity="center"
         android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints">
 
         <ImageView
@@ -27,21 +31,18 @@
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
-    <!--Header-->
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
-        android:layout_marginTop="33dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="276dp"
-        android:layout_marginBottom="12dp"
         android:fontFamily="@font/ubuntu_regular"
         android:text="@string/welcome"
         android:textColor="@color/black"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat" />
@@ -125,6 +126,8 @@
 
     <!--password Field-->
 
+    <!--Footer view-->
+
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="44dp"
@@ -138,7 +141,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/editRepass"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView4"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/editRepass"
@@ -147,29 +151,29 @@
         android:layout_marginStart="2dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="33dp"
-        android:layout_marginBottom="87dp"
         android:hint="@string/repassword"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/onSubmit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView2"
         app:layout_constraintTop_toBottomOf="@+id/editPassword" />
 
-    <!--Footer view-->
     <ImageButton
         android:id="@+id/onSubmit"
         android:layout_width="wrap_content"
         android:layout_height="58sp"
         android:layout_marginStart="101dp"
         android:layout_marginEnd="101dp"
+        android:layout_marginBottom="35dp"
         android:background="@color/white"
         android:contentDescription="@string/submitbtn"
         android:onClick="onClickLogin"
         android:src="@drawable/submit_button"
-        app:layout_constraintBottom_toTopOf="@+id/onSignIn"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat"
+        app:layout_constraintVertical_bias="0.986"
         tools:ignore="ImageContrastCheck" />
 
     <TextView
@@ -178,11 +182,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="124dp"
         android:layout_marginEnd="124dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="5dp"
         android:background="@android:color/transparent"
         android:onClick="onClickLogin"
         android:text="Already have account? Sign In"
-        android:textSize="12sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
