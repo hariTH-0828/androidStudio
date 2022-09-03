@@ -12,5 +12,6 @@
     <color name="signup_header">#66F4E3E3</color>
     <color name="green">#AA26730A</color>
     <color name="blue">#4AA3E6</color>
+    <color name="statusBar">#ABE0D5</color>
 
 </resources>

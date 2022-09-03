@@ -51,7 +51,6 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         Toast.makeText(LoginActivity.this, "Welcome "+vEmail, Toast.LENGTH_LONG).show();
-                        /*startActivity(new Intent(LoginActivity.this, HomeActivity.class));*/
                         Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                         intent.putExtra("userName",vEmail);
                         startActivity(intent);

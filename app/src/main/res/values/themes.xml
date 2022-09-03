@@ -12,15 +12,17 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
-
     </style>
 
     <style name="splashscreen" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <item name="android:windowBackground">@drawable/background_splashscreen</item>
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:windowBackground">@drawable/daylight_splashscreen</item>
+        <item name="android:statusBarColor">@color/white</item>
     </style>
 
-    <style name="noAction" parent="Theme.MaterialComponents.Light.NoActionBar" />
+    <style name="noAction" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:statusBarColor">@color/statusBar</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
 
     <style name="Theme.Fin.NoActionBar">
         <item name="windowActionBar">false</item>
