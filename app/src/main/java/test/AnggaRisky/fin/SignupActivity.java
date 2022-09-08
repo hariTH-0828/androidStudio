@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
@@ -17,58 +18,75 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-
-import java.util.regex.Pattern;
+import com.google.firebase.auth.FirebaseUser;
 
 public class SignupActivity extends AppCompatActivity {
 
-    private EditText sEmail, sRepassword, sPassword;
-    private ImageButton SignUp;
+    private EditText sEmail, sRepassword, sPassword, sUsername;
+    public ImageButton signUp;
+    public TextView signIn;
     private FirebaseAuth sAuth;
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        FirebaseUser currentUser = sAuth.getCurrentUser();
+        if(currentUser != null){
+            reload();
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
-
-        sEmail = findViewById(R.id.editMailID);
-        sPassword = findViewById(R.id.editPassword);
-        sRepassword = findViewById(R.id.editRepass);
-        SignUp = findViewById(R.id.onSubmit);
-
         sAuth = FirebaseAuth.getInstance();
 
-        SignUp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                createUser();
-            }
+        sEmail = findViewById(R.id.editMailID);
+        sUsername = findViewById(R.id.editUsername);
+        sPassword = findViewById(R.id.editPassword);
+        sRepassword = findViewById(R.id.editRepass);
+        signUp = findViewById(R.id.onRegister);
+        signIn = findViewById(R.id.onSignIn);
+
+        signUp.setOnClickListener(view -> createUser());
+        signIn.setOnClickListener(view1 -> {
+            Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
+            startActivity(intent);
         });
     }
 
     private void createUser(){
         String email = sEmail.getText().toString();
         String password = sPassword.getText().toString();
+
+        // Extra_fields
+        String username = sUsername.getText().toString();
         String repassword = sRepassword.getText().toString();
 
         if(!email.isEmpty() && Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-            if(!password.isEmpty() && password.equals(repassword)) {
+            if(!password.isEmpty() && password.equals(repassword) && password.length() >= 8) {
+                // START Create_user_with_email
                 sAuth.createUserWithEmailAndPassword(email, password)
-                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        .addOnCompleteListener(SignupActivity.this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        Toast.makeText(SignupActivity.this, "Registration Successfully", Toast.LENGTH_LONG).show();
-                        startActivity(new Intent(SignupActivity.this, LoginActivity.class));
-                        finish();
+                        if(task.isSuccessful()) {
+                            Log.d("TAG", "createUserWithEmail : Success");
+                            Toast.makeText(SignupActivity.this, "Registration Successfully " + username, Toast.LENGTH_LONG).show();
+                            startActivity(new Intent(SignupActivity.this, LoginActivity.class));
+                            finish();
+                        }
                     }
-                }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(SignupActivity.this, "Registration Failed!", Toast.LENGTH_LONG).show();
-                    }
+                }).addOnFailureListener(SignupActivity.this, new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Log.w("TAG", "user is already exist");
+                                Toast.makeText(SignupActivity.this, "This user already exist", Toast.LENGTH_SHORT).show();
+                            }
                 });
             } else{
-//                sPassword.setError("Empty Field is not allowed");
+                sPassword.setError("Empty Field is not allowed");
                 Toast.makeText(SignupActivity.this,"Error Password!!",Toast.LENGTH_LONG).show();
             }
         }else{
@@ -77,11 +95,5 @@ public class SignupActivity extends AppCompatActivity {
 
     }
 
-    public void onClickLogin(View view) {
-        TextView signIn = findViewById(R.id.onSignIn);
-        signIn.setOnClickListener(view1 -> {
-            Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
-            startActivity(intent);
-        });
-    }
+    private void reload() { }
 }

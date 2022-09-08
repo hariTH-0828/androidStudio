@@ -35,8 +35,7 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginStart="35dp"
         android:layout_marginEnd="276dp"
         android:fontFamily="@font/ubuntu_regular"
         android:text="@string/welcome"
@@ -51,8 +50,7 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="37dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginStart="35dp"
         android:layout_marginEnd="244dp"
         android:background="@android:color/transparent"
         android:fontFamily="@font/ubuntu"
@@ -62,105 +60,74 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
-    <!--Email TextBox Field-->
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="44dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="2dp"
-        android:layout_marginBottom="10dp"
-        android:contentDescription="@string/email_icon"
-        android:src="@drawable/email_icon"
-        app:layout_constraintBottom_toTopOf="@+id/imageView4"
-        app:layout_constraintEnd_toStartOf="@+id/editMailID"
+    <EditText
+        android:id="@+id/editUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="74dp"
+        android:layout_marginBottom="2dp"
+        android:background="@drawable/textbox"
+        android:hint="username"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/editMailID"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat" />
 
     <EditText
         android:id="@+id/editMailID"
-        android:layout_width="288dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="33dp"
-        android:layout_marginBottom="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="74dp"
+        android:layout_marginBottom="2dp"
         android:autofillHints=""
+        android:background="@drawable/textbox"
         android:ems="10"
         android:hint="E-Mail ID"
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toTopOf="@+id/editPassword"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
-    <!--Password Field-->
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="44dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="43dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="2dp"
-        android:contentDescription="@string/passwordicon"
-        android:src="@drawable/password_icon"
-        app:layout_constraintEnd_toStartOf="@+id/editPassword"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/editUsername" />
 
     <EditText
         android:id="@+id/editPassword"
-        android:layout_width="288dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="32dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="74dp"
+        android:layout_marginBottom="2dp"
         android:autofillHints=""
-        android:ems="10"
+        android:background="@drawable/textbox"
         android:hint="Password"
         android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/editRepass"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView4"
-        app:layout_constraintTop_toBottomOf="@+id/editMailID" />
-
-    <!--password Field-->
-
-    <!--Footer view-->
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="44dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="43dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="2dp"
-        android:layout_marginBottom="177dp"
-        android:contentDescription="@string/passwordicon"
-        android:src="@drawable/password_icon"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/editRepass"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/editMailID" />
 
     <EditText
         android:id="@+id/editRepass"
-        android:layout_width="288sp"
-        android:layout_height="48sp"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="33dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="72dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/textbox"
         android:hint="@string/repassword"
         android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/onRegister"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editPassword" />
 
     <ImageButton
-        android:id="@+id/onSubmit"
+        android:id="@+id/onRegister"
         android:layout_width="wrap_content"
-        android:layout_height="58sp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="101dp"
         android:layout_marginEnd="101dp"
         android:layout_marginBottom="35dp"
@@ -173,7 +140,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat"
-        app:layout_constraintVertical_bias="0.986"
+        app:layout_constraintVertical_bias="0.994"
         tools:ignore="ImageContrastCheck" />
 
     <TextView

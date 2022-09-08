@@ -20,7 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class LoginActivity extends AppCompatActivity {
 
     private EditText getEmail, getPassword;
-    private ImageButton submit;
+    public ImageButton submit;
     private FirebaseAuth lAuth;
 
     @Override
@@ -31,7 +31,7 @@ public class LoginActivity extends AppCompatActivity {
         lAuth = FirebaseAuth.getInstance();
         getEmail = findViewById(R.id.setEmail);
         getPassword = findViewById(R.id.setPassword);
-        submit = findViewById(R.id.onSubmit);
+        submit = findViewById(R.id.onSignin);
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,7 +52,7 @@ public class LoginActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         Toast.makeText(LoginActivity.this, "Welcome "+vEmail, Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-                        intent.putExtra("userName",vEmail);
+                        intent.putExtra("userName", vEmail);
                         startActivity(intent);
                         finish();
                     }

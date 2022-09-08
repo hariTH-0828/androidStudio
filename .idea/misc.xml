@@ -8,10 +8,12 @@
         <entry key="..\:/Users/sarav/AndroidStudioProjects/Fin/app/src/main/res/drawable/daylight_splashscreen.xml" value="0.1" />
         <entry key="..\:/Users/sarav/AndroidStudioProjects/Fin/app/src/main/res/drawable/night_splashscreen.xml" value="0.1" />
         <entry key="..\:/Users/sarav/AndroidStudioProjects/Fin/app/src/main/res/drawable/signup_bgheader.xml" value="0.178" />
+        <entry key="..\:/Users/sarav/AndroidStudioProjects/Fin/app/src/main/res/drawable/textbox.xml" value="0.33" />
         <entry key="..\:/Users/sarav/AndroidStudioProjects/Fin/app/src/main/res/drawable/username_placeholder.xml" value="0.33" />
-        <entry key="..\:/Users/sarav/AndroidStudioProjects/Fin/app/src/main/res/layout/activity_home.xml" value="0.5" />
+        <entry key="..\:/Users/sarav/AndroidStudioProjects/Fin/app/src/main/res/layout/activity_home.xml" value="0.33" />
         <entry key="..\:/Users/sarav/AndroidStudioProjects/Fin/app/src/main/res/layout/activity_login.xml" value="0.3625" />
         <entry key="..\:/Users/sarav/AndroidStudioProjects/Fin/app/src/main/res/layout/activity_main.xml" value="0.3625" />
+        <entry key="..\:/Users/sarav/AndroidStudioProjects/Fin/app/src/main/res/layout/activity_signup.xml" value="0.25" />
       </map>
     </option>
   </component>

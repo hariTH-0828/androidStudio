@@ -4,27 +4,30 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
 
-    public void onClickLogin(View view){
-        ImageButton loginBtn = findViewById(R.id.onLogin);
-        loginBtn.setOnClickListener(view1 -> {
-            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-            startActivity(intent);
-        });
-    }
+    public ImageButton loginBtn;
+    public ImageButton signupBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ImageButton signup = findViewById(R.id.onSignup);
-        signup.setOnClickListener(view -> {
+        loginBtn = findViewById(R.id.onLogin);
+        signupBtn = findViewById(R.id.onSignup);
+
+        signupBtn.setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this, SignupActivity.class);
+            startActivity(intent);
+        });
+
+        loginBtn.setOnClickListener(view1 -> {
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
             startActivity(intent);
         });
     }

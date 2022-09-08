@@ -24,11 +24,10 @@
         app:layout_constraintVertical_bias="0.022" />
 
     <Button
-        android:id="@+id/onSubmit"
+        android:id="@+id/onLogout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/blue"
-        android:onClick="logout"
         android:text="sign out"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
