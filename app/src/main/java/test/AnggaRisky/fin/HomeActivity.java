@@ -1,5 +1,7 @@
 package test.AnggaRisky.fin;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -11,11 +13,21 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.MutableData;
+import com.google.firebase.database.Transaction;
+import com.google.firebase.database.ValueEventListener;
 
 public class HomeActivity extends AppCompatActivity {
 
     public Button Logout;
-    private FirebaseAuth logoutAuth;
+    public TextView userName;
+
+    private FirebaseAuth homeAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,21 +35,16 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         Logout = findViewById(R.id.onLogout);
 
-        TextView userName = (TextView) findViewById(R.id.textWelcome);
-        userName.setText("Welcome "+getIntent().getStringExtra("userName"));
+        userName = findViewById(R.id.textWelcome);
+        userName.setText("Welcome "+getIntent().getStringExtra("username"));
 
-        Logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                logout();
-            }
-        });
+        Logout.setOnClickListener(view -> logout());
     }
 
     private void logout(){
-        logoutAuth = FirebaseAuth.getInstance();
+        homeAuth = FirebaseAuth.getInstance();
         Toast.makeText(this, "Logout successfull!", Toast.LENGTH_SHORT).show();
-        logoutAuth.signOut();
+        homeAuth.signOut();
         startActivity(new Intent(HomeActivity.this, MainActivity.class));
         finish();
     }

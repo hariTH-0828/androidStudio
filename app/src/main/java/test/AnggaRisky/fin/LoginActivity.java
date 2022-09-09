@@ -1,6 +1,7 @@
 package test.AnggaRisky.fin;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -13,24 +14,34 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.MutableData;
+import com.google.firebase.database.Transaction;
+import com.google.firebase.database.ValueEventListener;
 
 public class LoginActivity extends AppCompatActivity {
 
     private EditText getEmail, getPassword;
     public ImageButton submit;
+
     private FirebaseAuth lAuth;
+    public FirebaseDatabase userDB;
+    private DatabaseReference mDatabase;
+    public String uname;
 
     @Override
     public void onStart() {
         super.onStart();
         FirebaseUser currentUser = lAuth.getCurrentUser();
         if(currentUser != null){
-            reload();
+            reload(uname);
         }
     }
 
@@ -40,6 +51,8 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         lAuth = FirebaseAuth.getInstance();
+        userDB = FirebaseDatabase.getInstance();
+        mDatabase = userDB.getReference("users");
         getEmail = findViewById(R.id.setEmail);
         getPassword = findViewById(R.id.setPassword);
         submit = findViewById(R.id.onSignin);
@@ -64,7 +77,26 @@ public class LoginActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             Log.d("TAG", "signInWithEmail:success");
                             Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_LONG).show();
-                            reload();
+
+                            /* This content is used to getUsername from FirebaseDatabase */
+                            String userid = lAuth.getCurrentUser().getUid();
+                            DatabaseReference username = mDatabase.child(userid).child("username");
+
+                            username.runTransaction(new Transaction.Handler() {
+                                @NonNull
+                                @Override
+                                public Transaction.Result doTransaction(@NonNull MutableData currentData) {
+                                    String name = currentData.getValue(String.class);
+                                    return Transaction.success(currentData);
+                                }
+
+                                @Override
+                                public void onComplete(@Nullable DatabaseError error, boolean committed, @Nullable DataSnapshot currentData) {
+                                    uname = currentData.getValue(String.class);
+                                    if(uname != null)
+                                        reload(uname);
+                                }
+                            });
                         } else {
                             Log.w("TAG", "signInWithEmail:failure", task.getException());
                             Toast.makeText(LoginActivity.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
@@ -75,8 +107,9 @@ public class LoginActivity extends AppCompatActivity {
         }else getEmail.setError("Email is in Incorrect Format");
     }
 
-    private void reload(){
+    private void reload(String uname){
         Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+        intent.putExtra("username", uname);
         startActivity(intent);
     }
 }

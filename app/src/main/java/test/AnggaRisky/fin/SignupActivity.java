@@ -19,6 +19,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class SignupActivity extends AppCompatActivity {
 
@@ -26,6 +28,7 @@ public class SignupActivity extends AppCompatActivity {
     public ImageButton signUp;
     public TextView signIn;
     private FirebaseAuth sAuth;
+    private DatabaseReference mDatabase;
 
     @Override
     public void onStart() {
@@ -41,7 +44,9 @@ public class SignupActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
         sAuth = FirebaseAuth.getInstance();
+        mDatabase = FirebaseDatabase.getInstance().getReference();
 
+        // Variable Declaration
         sEmail = findViewById(R.id.editMailID);
         sUsername = findViewById(R.id.editUsername);
         sPassword = findViewById(R.id.editPassword);
@@ -49,6 +54,7 @@ public class SignupActivity extends AppCompatActivity {
         signUp = findViewById(R.id.onRegister);
         signIn = findViewById(R.id.onSignIn);
 
+        // Button Function Definition
         signUp.setOnClickListener(view -> createUser());
         signIn.setOnClickListener(view1 -> {
             Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
@@ -56,11 +62,10 @@ public class SignupActivity extends AppCompatActivity {
         });
     }
 
+    // This method is user to CREATE_USER in Firebase
     private void createUser(){
         String email = sEmail.getText().toString();
         String password = sPassword.getText().toString();
-
-        // Extra_fields
         String username = sUsername.getText().toString();
         String repassword = sRepassword.getText().toString();
 
@@ -74,16 +79,18 @@ public class SignupActivity extends AppCompatActivity {
                         if(task.isSuccessful()) {
                             Log.d("TAG", "createUserWithEmail : Success");
                             Toast.makeText(SignupActivity.this, "Registration Successfully " + username, Toast.LENGTH_LONG).show();
+                            String userID = sAuth.getCurrentUser().getUid();
+                            writeNewUser(userID, username, email);
                             startActivity(new Intent(SignupActivity.this, LoginActivity.class));
                             finish();
                         }
                     }
                 }).addOnFailureListener(SignupActivity.this, new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                Log.w("TAG", "user is already exist");
-                                Toast.makeText(SignupActivity.this, "This user already exist", Toast.LENGTH_SHORT).show();
-                            }
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Log.w("TAG", "user is already exist");
+                            Toast.makeText(SignupActivity.this, "This user already exist", Toast.LENGTH_SHORT).show();
+                        }
                 });
             } else{
                 sPassword.setError("Empty Field is not allowed");
@@ -95,5 +102,13 @@ public class SignupActivity extends AppCompatActivity {
 
     }
 
-    private void reload() { }
+    public void writeNewUser(String userID, String name, String email){
+        User user = new User(name, email);
+        mDatabase.child("users").child(userID).child("username").setValue(name);
+    }
+
+    private void reload(){
+        Intent intent = new Intent(SignupActivity.this, HomeActivity.class);
+        startActivity(intent);
+    }
 }
