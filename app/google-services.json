@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "1040102030993",
+    "firebase_url": "https://letstry-cd2bd-default-rtdb.firebaseio.com",
     "project_id": "letstry-cd2bd",
     "storage_bucket": "letstry-cd2bd.appspot.com"
   },

@@ -30,14 +30,6 @@ public class SignupActivity extends AppCompatActivity {
     private FirebaseAuth sAuth;
     private DatabaseReference mDatabase;
 
-    @Override
-    public void onStart() {
-        super.onStart();
-        FirebaseUser currentUser = sAuth.getCurrentUser();
-        if(currentUser != null){
-            reload();
-        }
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -107,8 +99,4 @@ public class SignupActivity extends AppCompatActivity {
         mDatabase.child("users").child(userID).child("username").setValue(name);
     }
 
-    private void reload(){
-        Intent intent = new Intent(SignupActivity.this, HomeActivity.class);
-        startActivity(intent);
-    }
 }

@@ -30,6 +30,13 @@ public class HomeActivity extends AppCompatActivity {
     private FirebaseAuth homeAuth;
 
     @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finishAffinity();
+        finish();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);

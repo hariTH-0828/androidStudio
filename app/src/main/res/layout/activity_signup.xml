@@ -74,7 +74,9 @@
         app:layout_constraintBottom_toTopOf="@+id/editMailID"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat"
+        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TextContrastCheck,TextContrastCheck"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/editMailID"
@@ -88,10 +90,12 @@
         android:ems="10"
         android:hint="E-Mail ID"
         android:inputType="textEmailAddress"
+        android:textColorHint="#757575"
         app:layout_constraintBottom_toTopOf="@+id/editPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editUsername" />
+        app:layout_constraintTop_toBottomOf="@+id/editUsername"
+        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/editPassword"
@@ -107,7 +111,8 @@
         app:layout_constraintBottom_toTopOf="@+id/editRepass"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editMailID" />
+        app:layout_constraintTop_toBottomOf="@+id/editMailID"
+        tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
     <EditText
         android:id="@+id/editRepass"
@@ -119,10 +124,13 @@
         android:background="@drawable/textbox"
         android:hint="@string/repassword"
         android:inputType="textPassword"
+        android:textColorHint="#757575"
         app:layout_constraintBottom_toTopOf="@+id/onRegister"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/editPassword"
+        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck"
+        android:importantForAutofill="no" />
 
     <ImageButton
         android:id="@+id/onRegister"
@@ -133,7 +141,6 @@
         android:layout_marginBottom="35dp"
         android:background="@color/white"
         android:contentDescription="@string/submitbtn"
-        android:onClick="onClickLogin"
         android:src="@drawable/submit_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -151,12 +158,12 @@
         android:layout_marginEnd="124dp"
         android:layout_marginBottom="5dp"
         android:background="@android:color/transparent"
-        android:onClick="onClickLogin"
         android:text="Already have account? Sign In"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
