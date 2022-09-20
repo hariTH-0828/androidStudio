@@ -32,12 +32,6 @@ public class LoginActivity extends AppCompatActivity {
     private DatabaseReference mDatabase;
     public String uname;
 
-    /*@Override
-    protected void onStart() {
-        super.onStart();
-        getUsername();
-    }*/
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -90,26 +84,6 @@ public class LoginActivity extends AppCompatActivity {
         }else getEmail.setError("Email is in Incorrect Format");
     }
 
-    private void getUsername(){
-        String userid = Objects.requireNonNull(lAuth.getCurrentUser()).getUid();
-        DatabaseReference username = mDatabase.child(userid).child("username");
-
-        username.runTransaction(new Transaction.Handler() {
-            @NonNull
-            @Override
-            public Transaction.Result doTransaction(@NonNull MutableData currentData) {
-                //String name = currentData.getValue(String.class);
-                return Transaction.success(currentData);
-            }
-
-            @Override
-            public void onComplete(@Nullable DatabaseError error, boolean committed, @Nullable DataSnapshot currentData) {
-                uname = currentData.getValue(String.class);
-                if(uname != null)
-                    reload(uname);
-            }
-        });
-    }
     public void reload(String uname){
         Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
         intent.putExtra("username", uname);
